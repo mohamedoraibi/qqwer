@@ -18,7 +18,7 @@
                     @endforeach
                 </div>
             @endif
-            <form class="forms-sample" action="/problem/add/save" method="POST" enctype="multipart/form-data">
+            <form class="forms-sample" action="/{{app()->getLocale()}}/problem/add/save" method="POST" enctype="multipart/form-data">
 
                 {{ csrf_field() }}
                 <div class="form-group">

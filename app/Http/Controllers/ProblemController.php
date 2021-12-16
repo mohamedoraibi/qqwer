@@ -76,9 +76,19 @@ class ProblemController extends Controller
             $Problem->dist_id = $request->dist_id;
             $Problem->image1 = $fileNameToStore;
 //              $Problem->device = $request->user()->id;
-
             $Problem->save();
-            return redirect('/problem/all')->with('add', 'add');
+            if(app()->getLocale() == "en"){
+                return redirect('/en/problem/all')->with('add', 'add');
+            }
+            if(app()->getLocale() == "ar"){
+                return redirect('/ar/problem/all')->with('add', 'add');
+            }
         }
+    }
+
+    public function test(Request $request)
+    {
+        dd(time());
+        return redirect()->back();
     }
 }

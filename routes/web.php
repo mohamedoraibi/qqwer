@@ -29,6 +29,7 @@ Route::get('/{lang}/problem/all', [ProblemController::class, 'getProblems']);
 Route::get('/{lang}/problem/tickets', [ProblemController::class, 'getMyTickets']);
 Route::get('/{lang}/problem/new', [ProblemController::class, 'getProblemAdd']);
 Route::post('/{lang}/problem/add/save', [ProblemController::class, 'insertProblem']);
+Route::get('/test', [ProblemController::class, 'test']);
 
 
 
@@ -36,9 +37,9 @@ Route::post('/{lang}/problem/add/save', [ProblemController::class, 'insertProble
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/test', function () {
-    return view('test');
-});
+//Route::get('/test', function () {
+//    return view('test');
+//});
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
