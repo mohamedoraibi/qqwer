@@ -30,15 +30,17 @@ class ProblemController extends Controller
 
     public function getProblemAdd(Request $request, $lang)
     {
+        $Translates = Translate::get();
         App::setLocale($lang);
 //        if ($request->user()->type == 'Viewer' || $request->user()->type == 'Management') {
 //            return redirect('/');
 //        }
-        return view('dashboard/problemNew');
+        return view('dashboard/problemNew',compact('Translates'));
     }
 
     public function insertProblem(Request $request, $lang)
     {
+
         App::setLocale($lang);
 //        if ($request->user()->type == 'Viewer' || $request->user()->type == 'Management') {
 //            return redirect('/');

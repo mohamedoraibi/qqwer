@@ -15,15 +15,16 @@
 {{--                        // code--}}
 {{--                    @endif--}}
 {{--                    {{$Translates->where('key','main_sidebar_menu_all_problems')->first()->arabic}}--}}
-                    {{trans('messages.main_sidebar_menu_all_problems')}}
+                    {{$Translates->where('key', '=', 'main_sidebar_menu_all_problems')->pluck(app()->getLocale())->first()}}
                 </span>
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="/{{app()->getLocale()}}/problem/all">{{__('messages.all_problems')}}</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="/{{app()->getLocale()}}/problem/new">{{__('messages.add_new_problem')}}</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="/{{app()->getLocale()}}/problem/tickets">{{__('messages.my_tickets')}}</a></li>
+{{--                    <li class="nav-item"> <a class="nav-link" href="/{{app()->getLocale()}}/problem/all">{{$Translates->pluck(app()->getLocale())->first()}}</a></li>--}}
+                    <li class="nav-item"> <a class="nav-link" href="/{{app()->getLocale()}}/problem/all">{{$Translates->where('key', '=', 'all_problems')->pluck(app()->getLocale())->first()}}</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/{{app()->getLocale()}}/problem/new">{{$Translates->where('key', '=', 'add_new_problem')->pluck(app()->getLocale())->first()}}</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/{{app()->getLocale()}}/problem/tickets">{{$Translates->where('key', '=', 'my_tickets')->pluck(app()->getLocale())->first()}}</a></li>
                 </ul>
             </div>
         </li>

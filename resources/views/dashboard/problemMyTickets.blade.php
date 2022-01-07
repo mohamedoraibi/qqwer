@@ -5,7 +5,7 @@
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">{{__('messages.my_tickets')}}</h4>
+                <h4 class="card-title">{{$Translates->where('key', '=', 'my_tickets')->pluck(app()->getLocale())->first()}} </h4>
                 <p class="card-description">
                     Below is all problems
                 </p>

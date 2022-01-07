@@ -4,9 +4,10 @@
 @section('content')
     <div class="card card-full">
         <div class="card-body">
-            <h4 class="card-title">{{__('messages.add_new_problem')}}</h4>
+            <h4 class="card-title">{{$Translates->where('key', '=', 'add_new_problem')->pluck(app()->getLocale())->first()}}</h4>
             <p class="card-description">
-                Please fill the following details
+                {{$Translates->where('key', '=', 'addNewProblem_please_fill_the_following_details')->pluck(app()->getLocale())->first()}}
+
             </p>
             @if($errors->count()>0)
                 <div class="alert alert-danger">
@@ -22,30 +23,30 @@
 
                 {{ csrf_field() }}
                 <div class="form-group">
-                    <label for="name">Problem Title</label>
-                    <input type="text" class="form-control" name="name" id="name" placeholder="Big tassa in mansour">
+                    <label for="name">{{$Translates->where('key', '=', 'addNewProblem_problem_title')->pluck(app()->getLocale())->first()}}</label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="{{$Translates->where('key', '=', 'addNewProblem_problem_title_placeholder')->pluck(app()->getLocale())->first()}}">
                 </div>
                 <div class="form-group">
-                    <label for="description">Description</label>
+                    <label for="description">{{$Translates->where('key', '=', 'addNewProblem_description')->pluck(app()->getLocale())->first()}}</label>
                     <input type="text" class="form-control" name="description" id="description"
-                           placeholder="Description">
+                           placeholder="{{$Translates->where('key', '=', 'addNewProblem_problem_description_placeholder')->pluck(app()->getLocale())->first()}}">
                 </div>
                 <div class="form-group">
-                    <label for="gov_id">Governorate</label>
-                    <input type="text" class="form-control" name="gov_id" id="gov_id" placeholder="Baghdad">
+                    <label for="gov_id">{{$Translates->where('key', '=', 'addNewProblem_governorate')->pluck(app()->getLocale())->first()}}</label>
+                    <input type="text" class="form-control" name="gov_id" id="gov_id" placeholder="">
                 </div>
                 <div class="form-group">
-                    <label for="dist_id">District</label>
-                    <input type="text" class="form-control" name="dist_id" id="dist_id" placeholder="Mansour">
+                    <label for="dist_id">{{$Translates->where('key', '=', 'addNewProblem_district')->pluck(app()->getLocale())->first()}}</label>
+                    <input type="text" class="form-control" name="dist_id" id="dist_id" placeholder="">
                 </div>
                 <div class="form-group">
-                    <label for="image1">Image</label>
+                    <label for="image1">{{$Translates->where('key', '=', 'addNewProblem_image')->pluck(app()->getLocale())->first()}}</label>
                     <input type="file" class="form-control" name="image1" id="image1" >
                 </div>
 
 
-                <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                <button class="btn btn-light">Cancel</button>
+                <button type="submit" class="btn btn-primary mr-2">{{$Translates->where('key', '=', 'submit')->pluck(app()->getLocale())->first()}}</button>
+                <button class="btn btn-light">{{$Translates->where('key', '=', 'cancel')->pluck(app()->getLocale())->first()}}</button>
             </form>
         </div>
     </div>

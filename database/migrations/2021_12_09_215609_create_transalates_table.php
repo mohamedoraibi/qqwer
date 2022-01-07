@@ -16,8 +16,8 @@ class CreateTransalatesTable extends Migration
         Schema::create('translates', function (Blueprint $table) {
             $table->id();
             $table->string('key')->nullable();
-            $table->string('arabic')->nullable();
-            $table->string('english')->nullable();
+            $table->string('ar')->nullable();
+            $table->string('en')->nullable();
             $table->ipAddress('visitor')->nullable();
             $table->macAddress('device')->nullable();
             $table->rememberToken();

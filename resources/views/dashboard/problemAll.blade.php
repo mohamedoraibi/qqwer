@@ -5,7 +5,7 @@
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">{{__('messages.all_problems')}}</h4>
+                <h4 class="card-title"> {{$Translates->where('key', '=', 'all_problems')->pluck(app()->getLocale())->first()}}</h4>
                 <p class="card-description">
                     Below is all problems
                 </p>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\ProblemController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +31,7 @@ Route::get('/{lang}/problem/tickets', [ProblemController::class, 'getMyTickets']
 Route::get('/{lang}/problem/new', [ProblemController::class, 'getProblemAdd']);
 Route::post('/{lang}/problem/add/save', [ProblemController::class, 'insertProblem']);
 Route::get('/test', [ProblemController::class, 'test']);
+Route::post('logout', [Controller::class, 'logout'])->name('logout');
 
 
 
